@@ -1,30 +1,30 @@
 -- vim: set ft=lua:
 
---- === FastmailTodoist ===
+--- === Fastmail2Todoist ===
 ---
 --- A Hammerspoon Spoon that turns the message open in the Fastmail app into a
 --- Todoist task: it opens Todoist's quick add with the subject as the task and a
 --- link back to the message as its description.
 ---
---- Download: https://github.com/hugoh/FastmailTodoist.spoon/releases/latest
+--- Download: https://github.com/hugoh/Fastmail2Todoist.spoon/releases/latest
 
 local obj = {}
 obj.__index = obj
 
-obj.name = "FastmailTodoist"
+obj.name = "Fastmail2Todoist"
 obj.version = "dev"
 obj.author = "Hugo Haas"
 obj.license = "MIT"
-obj.homepage = "https://github.com/hugoh/FastmailTodoist.spoon"
+obj.homepage = "https://github.com/hugoh/Fastmail2Todoist.spoon"
 
-obj.log = hs.logger.new("FastmailTodoist", "info")
+obj.log = hs.logger.new("Fastmail2Todoist", "info")
 
 local BUNDLE_ID = "com.fastmail.mac.Fastmail"
 -- Electron builds its accessibility tree asynchronously once asked to.
 local TREE_DELAY = 1
 local MAX_DEPTH = 25
 
---- FastmailTodoist:init()
+--- Fastmail2Todoist:init()
 --- Method
 --- Called automatically by `hs.loadSpoon()`. Logs the loaded version.
 function obj:init()
@@ -73,12 +73,12 @@ function obj:_capture(app, mayRetry)
 	openQuickAdd(webArea.AXTitle, url)
 end
 
---- FastmailTodoist:capture() -> FastmailTodoist
+--- Fastmail2Todoist:capture() -> Fastmail2Todoist
 --- Method
 --- Opens Todoist's quick add, pre-filled from the message open in Fastmail.
 ---
 --- Returns:
----  * The FastmailTodoist object, for method chaining
+---  * The Fastmail2Todoist object, for method chaining
 ---
 --- Notes:
 ---  * Nothing is saved until you confirm the task in Todoist.
@@ -93,15 +93,15 @@ function obj:capture()
 	return self
 end
 
---- FastmailTodoist:bindHotkeys(mapping) -> FastmailTodoist
+--- Fastmail2Todoist:bindHotkeys(mapping) -> Fastmail2Todoist
 --- Method
---- Binds hotkeys for FastmailTodoist.
+--- Binds hotkeys for Fastmail2Todoist.
 ---
 --- Parameters:
 ---  * mapping - a table with a `capture` key mapped to a `{ {modifiers}, key }` spec
 ---
 --- Returns:
----  * The FastmailTodoist object, for method chaining
+---  * The Fastmail2Todoist object, for method chaining
 function obj:bindHotkeys(mapping)
 	local spec = mapping.capture
 	if spec then
@@ -111,12 +111,12 @@ function obj:bindHotkeys(mapping)
 	return self
 end
 
---- FastmailTodoist:stop() -> FastmailTodoist
+--- Fastmail2Todoist:stop() -> Fastmail2Todoist
 --- Method
 --- Unbinds the hotkey and cancels any pending capture.
 ---
 --- Returns:
----  * The FastmailTodoist object, for method chaining
+---  * The Fastmail2Todoist object, for method chaining
 function obj:stop()
 	if self._hotkey then
 		self._hotkey:delete()

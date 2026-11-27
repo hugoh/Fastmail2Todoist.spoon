@@ -116,3 +116,7 @@ describe("hotkeys", function()
 		assert.is_true(ctl.hotkeys[1].deleted)
 	end)
 end)
+
+describe("init", function()
+	it("is named after its bundle", function() assert.are.equal("Fastmail2Todoist", Spoon.name) end)
+end)

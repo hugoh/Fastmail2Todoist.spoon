@@ -1,7 +1,7 @@
 # Fastmail2Todoist Spoon
 
 [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Hammerspoon Spoon](https://img.shields.io/badge/Hammerspoon-Spoon-FFA500.svg)](https://github.com/hugoh/Fastmail2Todoist.spoon)
+[![Hammerspoon Spoon](https://img.shields.io/badge/Hammerspoon-Spoon-FFA500.svg)](https://fastmail2todoist-spoon.larve.net/)
 
 A Hammerspoon Spoon that turns the message open in the [Fastmail](https://www.fastmail.com) Mac app into a [Todoist](https://www.todoist.com) task.
 
@@ -25,3 +25,7 @@ Download `Fastmail2Todoist.spoon.zip` from the [latest release](https://github.c
 ```lua
 hs.loadSpoon("Fastmail2Todoist"):bindHotkeys({ capture = { { "ctrl", "alt", "cmd" }, "i" } })
 ```
+
+## API documentation
+
+Full [API reference](https://fastmail2todoist-spoon.larve.net/) is generated from the docstrings in `init.lua` (`mise run docs`).

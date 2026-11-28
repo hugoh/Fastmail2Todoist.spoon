@@ -26,14 +26,14 @@ description = "Generate docs/docs.json and docs/index.html from docstrings"
 depends = ["docs"]
 run = """
 rm -rf dist
-mkdir -p dist/FastmailTodoist.spoon
-cp init.lua LICENSE README.md docs/docs.json dist/FastmailTodoist.spoon/
+mkdir -p dist/Fastmail2Todoist.spoon
+cp init.lua LICENSE README.md docs/docs.json dist/Fastmail2Todoist.spoon/
 cd dist
-zip -r ../FastmailTodoist.spoon.zip FastmailTodoist.spoon
+zip -r ../Fastmail2Todoist.spoon.zip Fastmail2Todoist.spoon
 cd ..
 rm -rf dist
 """
-description = "Build a self-contained FastmailTodoist.spoon.zip (includes docs.json)"
+description = "Build a self-contained Fastmail2Todoist.spoon.zip (includes docs.json)"
 
 [tasks.deps]
 description = "Install the pinned hs_mock into the project-local .rocks tree"

@@ -1,11 +1,11 @@
-# FastmailTodoist Spoon
+# Fastmail2Todoist Spoon
 
 [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Hammerspoon Spoon](https://img.shields.io/badge/Hammerspoon-Spoon-FFA500.svg)](https://github.com/hugoh/FastmailTodoist.spoon)
+[![Hammerspoon Spoon](https://img.shields.io/badge/Hammerspoon-Spoon-FFA500.svg)](https://fastmail2todoist-spoon.larve.net/)
 
 A Hammerspoon Spoon that turns the message open in the [Fastmail](https://www.fastmail.com) Mac app into a [Todoist](https://www.todoist.com) task.
 
-**Repository**: [https://github.com/hugoh/FastmailTodoist.spoon](https://github.com/hugoh/FastmailTodoist.spoon)
+**Repository**: [https://github.com/hugoh/Fastmail2Todoist.spoon](https://github.com/hugoh/Fastmail2Todoist.spoon)
 
 ## How it works
 
@@ -18,10 +18,14 @@ The Spoon reads the open message's subject and web address through macOS accessi
 
 ## Installation
 
-Download `FastmailTodoist.spoon.zip` from the [latest release](https://github.com/hugoh/FastmailTodoist.spoon/releases/latest), unzip it, move `FastmailTodoist.spoon` to `~/.hammerspoon/Spoons/`, and reload Hammerspoon.
+Download `Fastmail2Todoist.spoon.zip` from the [latest release](https://github.com/hugoh/Fastmail2Todoist.spoon/releases/latest), unzip it, move `Fastmail2Todoist.spoon` to `~/.hammerspoon/Spoons/`, and reload Hammerspoon.
 
 ## Usage
 
 ```lua
-hs.loadSpoon("FastmailTodoist"):bindHotkeys({ capture = { { "ctrl", "alt", "cmd" }, "i" } })
+hs.loadSpoon("Fastmail2Todoist"):bindHotkeys({ capture = { { "ctrl", "alt", "cmd" }, "i" } })
 ```
+
+## API documentation
+
+Full [API reference](https://fastmail2todoist-spoon.larve.net/) is generated from the docstrings in `init.lua` (`mise run docs`).

@@ -47,7 +47,7 @@ describe("capture", function()
 		Spoon:capture()
 		assert.are.same({
 			"todoist://openquickadd?content=Hello&description="
-				.. "%5BOpen%20in%20Fastmail%5D%28https%3A%2F%2Fapp.fastmail.com%2Fmail%2FInbox%2F"
+				.. "%5BOpen%20in%20Fastmail%5D%28https%3A%2F%2Fapp.fastmail.com%2Fmail%2Fsearch%3Aafter%253A1970-01-01%2F"
 				.. "AZkD-uu_I7gB.StlHYPecoMJJ%3Fu%3Dabc123%29",
 		}, ctl.openedURLs)
 	end)
@@ -58,10 +58,12 @@ describe("capture", function()
 		assert.is_truthy(ctl.openedURLs[1]:find("content=Q%26A%20%3D%20100%25%20%231%2B%C3%A9&description=", 1, true))
 	end)
 
-	it("accepts a message opened from a search", function()
+	it("replaces a search with the folder-independent one", function()
 		webArea = area("https://app.fastmail.com/mail/search:foo.com/Tabc.Mdef?u=1", "Hello")
 		Spoon:capture()
-		assert.are.equal(1, #ctl.openedURLs)
+		assert.is_truthy(
+			ctl.openedURLs[1]:find("%2Fmail%2Fsearch%3Aafter%253A1970-01-01%2FTabc.Mdef%3Fu%3D1%29", 1, true)
+		)
 	end)
 
 	for _, url in ipairs({

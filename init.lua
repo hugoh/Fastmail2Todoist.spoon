@@ -52,6 +52,10 @@ local function encode(text)
 	return (text:gsub("[^%w_.~-]", function(char) return string.format("%%%02X", char:byte()) end))
 end
 
+-- A folder in the link would make it "not found" once the message is moved, so
+-- point it at a search that matches all mail.
+local function permalink(url) return (url:gsub("/mail/[^?#]*/", "/mail/search:after%%3A1970-01-01/", 1)) end
+
 local function openQuickAdd(subject, url)
 	local description = "[Open in Fastmail](" .. url .. ")"
 	hs.urlevent.openURL("todoist://openquickadd?content=" .. encode(subject) .. "&description=" .. encode(description))
@@ -70,7 +74,7 @@ function obj:_capture(app, mayRetry)
 		hs.alert.show("No Fastmail message open")
 		return
 	end
-	openQuickAdd(webArea.AXTitle, url)
+	openQuickAdd(webArea.AXTitle, permalink(url))
 end
 
 --- Fastmail2Todoist:capture() -> Fastmail2Todoist

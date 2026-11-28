@@ -9,7 +9,7 @@ A Hammerspoon Spoon that turns the message open in the [Fastmail](https://www.fa
 
 ## How it works
 
-The Spoon reads the open message's subject and web address through macOS accessibility, then opens Todoist's quick add with the subject as the task and an "Open in Fastmail" link as the description. You pick the project and date, then confirm. No API token is needed.
+The Spoon reads the open message's subject and web address through macOS accessibility, then opens Todoist's quick add with the subject as the task and an "Open in Fastmail" link as the description. The link doesn't depend on the message's folder, so it keeps working after you move the message (except to Spam or Trash). You pick the project and date, then confirm. No API token is needed.
 
 ## Requirements
 
